@@ -31,8 +31,8 @@ try:
     train_dataset = datasets.MNIST(root="./data", train=True, download=True, transform=transforms.ToTensor())
     train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=128, shuffle=True)
 
-    X_test = load_mnist_images("C:\\Users\\Bodzio_Lokalne\\Desktop\\vsc\\data\\MNIST\\raw\\t10k-images-idx3-ubyte")
-    y_test = load_mnist_labels("C:\\Users\\Bodzio_Lokalne\\Desktop\\vsc\\data\\MNIST\\raw\\t10k-labels-idx1-ubyte")
+    X_test = load_mnist_images(f"{curr_dir}\\data\\MNIST\\raw\\t10k-images-idx3-ubyte")
+    y_test = load_mnist_labels(f"{curr_dir}\\data\\MNIST\\raw\\t10k-labels-idx1-ubyte")
 except:
     print("Pliki nie istnieją")
 
@@ -272,4 +272,5 @@ if 'W1' in globals() and 'b2' in globals():
     root.mainloop()
 else:
     print("BŁĄD: Najpierw musisz wytrenować sieć (uruchom pętlę for)!")
+
     print("Zmienne W1, b1, W2, b2 nie istnieją w pamięci.")
